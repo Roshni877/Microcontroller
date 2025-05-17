@@ -1,0 +1,10 @@
+AREA lab3, CODE, READONLY
+ENTRY
+	LDR R0, MEMORY ; load Address of memory
+	LDRH R1, [R0] ; load First number
+	LDRH R2, [R0,#2] ; load Second number
+	MUL R2, R1, R2 ; R2 = R1 x R2
+	STRH R2, [R0,#4] ; Store the result
+STOP B STOP
+MEMORY DCD 0x40000000 ; Address of First 16 bit number
+	END
